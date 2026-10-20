@@ -155,3 +155,93 @@
 
 // Console.WriteLine();
 // Console.WriteLine($"Массив: {string.Join(", ", array)}");
+
+
+
+// ## Итоговая задача. Результаты тренировок
+
+// using System;
+
+// class Program
+// {
+//     static int ReadInt(string prompt, bool mustBePositive = false)
+//     {
+//         int value;
+//         while (true)
+//         {
+//             Console.Write(prompt);
+//             if (int.TryParse(Console.ReadLine(), out value))
+//             {
+//                 if (!mustBePositive || value > 0)
+//                     return value;
+//             }
+//             Console.WriteLine("Некорректный ввод, попробуйте ещё раз.");
+//         }
+//     }
+
+//     static int[] ReadResults(int count)
+//     {
+//         int[] results = new int[count];
+//         for (int i = 0; i < results.Length; i++)
+//         {
+//             results[i] = ReadInt($"Результат {i + 1}: ");
+//         }
+//         return results;
+//     }
+
+//     static void PrintNumbered(int[] array)
+//     {
+//         for (int i = 0; i < array.Length; i++)
+//         {
+//             Console.WriteLine($"{i + 1}: {array[i]}");
+//         }
+//     }
+
+//     static double Average(int[] array)
+//     {
+//         int sum = 0;
+//         foreach (int x in array) sum += x;
+//         return (double)sum / array.Length;
+//     }
+
+//     static int Max(int[] array)
+//     {
+//         int max = array[0];
+//         foreach (int x in array)
+//             if (x > max) max = x;
+//         return max;
+//     }
+
+//     static int Min(int[] array)
+//     {
+//         int min = array[0];
+//         foreach (int x in array)
+//             if (x < min) min = x;
+//         return min;
+//     }
+
+//     static int CountAtLeast(int[] array, int threshold)
+//     {
+//         int count = 0;
+//         foreach (int x in array)
+//             if (x >= threshold) count++;
+//         return count;
+//     }
+
+//     static void Main()
+//     {
+//         int count = ReadInt("Сколько результатов? ", mustBePositive: true);
+//         int[] results = ReadResults(count);
+//         int threshold = ReadInt("Порог: ");
+
+//         Console.WriteLine();
+//         Console.WriteLine("Результаты:");
+//         PrintNumbered(results);
+
+//         Console.WriteLine();
+//         Console.WriteLine($"Среднее: {Average(results):F2}");
+//         Console.WriteLine($"Лучший результат: {Max(results)}");
+//         Console.WriteLine($"Худший результат: {Min(results)}");
+//         Console.WriteLine($"Результатов не ниже {threshold}: {CountAtLeast(results, threshold)}");
+//     }
+// }
